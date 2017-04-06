@@ -60,7 +60,7 @@ load("gss.Rdata")
 Source: [GSS project description](http://www.norc.org/Research/Projects/Pages/general-social-survey.aspx)
 > Since 1972, the General Social Survey (GSS) has been monitoring societal change and studying the growing complexity of American society. The GSS aims to gather data on contemporary American society in order to monitor and explain trends and constants in attitudes, behaviors, and attributes; to examine the structure and functioning of society in general as well as the role played by relevant subgroups; to compare the United States to other societies in order to place American society in comparative perspective and develop cross-national models of human society; and to make high-quality data easily accessible to scholars, students, policy makers, and others, with minimal cost and waiting.
 
-The survey has been conducted annually 1972-2012. For this project, I work with the Coursera extract of the raw survey dataset. In this extract, the missing values have been removed and few other modifications have been performed to make it convenient for practicing statistical reasoning using R. The extracted dataset consists of 57061 obsservations with 114 variables. Each variable corresponds to a specific question asked to the survey respondent. Expectedly, not every question is applicable to every respondent. 
+The survey has been conducted annually 1972-2012. For this project, I work with the Coursera extract of the raw survey dataset. In this extract, the missing values have been removed and few other modifications have been performed to make it convenient for practicing statistical reasoning using R. The extracted dataset consists of 57061 observations with 114 variables. Each variable corresponds to a specific question asked to the survey respondent. Expectedly, not every question is applicable to every respondent. 
 
 ### 2.3.1 Scopes of Inference
 
@@ -280,9 +280,9 @@ ggplot(data=gss_citzn,aes(x=uscitzn,y=coninc)) + geom_boxplot(aes(fill=uscitzn))
 ```
 
 *Observations:*
-The variability across the groups varies significantly with the Born Outside group having the highest inter-quartile range. We observe the median for U.S Citizen group is mich higher than that of non-U.S. citizens.
+The variability across the groups varies significantly with the Born Outside group having the highest inter-quartile range. We observe the median for U.S Citizen group is much higher than that of non-U.S. citizens.
 
-Based on the above observations, the conditions for performing ANOVA are not FULLY satisfied. Therefore, we need to be cautious in interpreting the results of ANOVA. Moreover, thhere might be external factors outside of citizenship that might be strongly correlated with income e.g. highest level of education.
+Based on the above observations, the conditions for performing ANOVA are not FULLY satisfied. Therefore, we need to be cautious in interpreting the results of ANOVA. Moreover, there might be external factors outside of citizenship that might be strongly correlated with income e.g. highest level of education.
 
 #### 4.4.3 ANOVA
 
@@ -303,7 +303,7 @@ pairwise.t.test(gss_citzn$coninc, gss_citzn$uscitzn, p.adj="bonferroni")
 
 1. Interestingly, for most group pairs, p-value is much higher than $0.05/6$, our reduced significance level.
 
-2. With a p-value close to zero, we have strong evidence that the mean total infaltion-corrected family income for U.S. Citizens and non U.S. Citizens is different and this difference cannot be explained by the sampling variability. We can be confident of this result because although ANOVA conditions weren't satisfied, the sample size for both Citizen and Not Citizen groups is much higher than 30 and we can consider the sampling distribution of their difference to be nearly normal.
+2. With a p-value close to zero, we have strong evidence that the mean total inflation-corrected family income for U.S. Citizens and non U.S. Citizens is different and this difference cannot be explained by the sampling variability. We can be confident of this result because although ANOVA conditions weren't satisfied, the sample size for both Citizen and Not Citizen groups is much higher than 30 and we can consider the sampling distribution of their difference to be nearly normal.
 
 To dive further into analyzing these two groups, we need to filter out the other groups.
 
@@ -330,7 +330,7 @@ Although ANOVA conditions were not fulfilled, we observed through pairwise t-tes
 
 ### 5.1 Motivation
 
-With an exponential increase in the startups popping up all over the world, it is interesting to analyze if there are any differences between the two genders in entreprenuership. For this purpose, I compare the proportions of men and women that are self-employed and draw statistical inferences.
+With an exponential increase in the startups popping up all over the world, it is interesting to analyze if there are any differences between the two genders in entrepreneurship. For this purpose, I compare the proportions of men and women that are self-employed and draw statistical inferences.
 
 ### 5.2 Dataset
 
@@ -365,7 +365,7 @@ The above figure displays the loess regression curves for the self-employed prop
 
 *Observations:*
 
-1. Interestingly, the peak for men occured around 1985 whereas the peak for women occured much later in 1998.
+1. Interestingly, the peak for men occurred around 1985 whereas the peak for women occurred much later in 1998.
 
 2. Consistently, the proportion for men is higher than for women.
 
@@ -478,7 +478,7 @@ As we have two Satisfaction groups and 8 number of children groups, the hypothes
 
 #### 6.4.2 Check Conditions
 
-1. *Independence*: The samples are independent as discussed previosly in this article.
+1. *Independence*: The samples are independent as discussed previously in this article.
 
 2. *Expected Counts*: 
 
@@ -561,13 +561,13 @@ final_df <- full_join(final_df,expected_prop,by="race")
 final_df
 ```
 
-Interestingly, there is a significant difference in the number of black respondents between the observed data and epxected counts.
+Interestingly, there is a significant difference in the number of black respondents between the observed data and expected counts.
 
 ### 7.4 Inference
 
 #### 7.4.1 State Hypothesis
 
-**Null hypothesis**: The distribution of self-employed follows the hypothesized distribution, and any observed differences are due to chance. The hypothesised distribution is the overall distribution of people belonging to different races.
+**Null hypothesis**: The distribution of self-employed follows the hypothesized distribution, and any observed differences are due to chance. The hypothesized distribution is the overall distribution of people belonging to different races.
 
 **Alternate hypothesis**: The distribution of observed counts does not follow the hypothesized distribution.
 
@@ -589,7 +589,7 @@ All the conditions for performing chi-square goodness of fit test are satisfied.
 chisq.test(x = final_df$observed_counts,p = final_df$prop)
 ```
 
-Based on the p-value almost zero, we have strong evidence to reject the null hypothesis that the distribution of self-employed follows the hypothesized distribution. The observed counts cannot be explained by just the sampling variability of the null hypothesised distribution. 
+Based on the p-value almost zero, we have strong evidence to reject the null hypothesis that the distribution of self-employed follows the hypothesized distribution. The observed counts cannot be explained by just the sampling variability of the null hypothesized distribution. 
 
 ### 7.5 Finding
 
