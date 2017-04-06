@@ -147,7 +147,7 @@ Mosaic plots, a multi-dimension extension to the spine plots, provide a good ill
 plot(table(gss_news$news,gss_news$confed))
 ```
 
-![news-confidence-mosaic](/images/inferential_statistics_gss/news-confidence-mosaic.png)
+![news-confidence-mosaic](/images/inferential_statistics_gss/news_confidence_mosaic.png)
 
 In the above mosaic plot, the area for the group *A Great Deal* monotonically decreases as the the frequency of reading decreases.
 
