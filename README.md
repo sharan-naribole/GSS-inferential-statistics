@@ -7,10 +7,6 @@
 -   [5. Self-Employment Disparity between Genders](#self-employment-disparity-between-genders)
 -   [6. Family Size impact on Financial Satisfaction](#family-size-impact-on-financial-satisfaction)
 -   [7. Race representation among the Self-Employed](#race-representation-among-the-self-employed)
--   [Conclusion](#conclusion)
--   [References](#references)
-
-The R code used in this article is available on [GitHub][github].
 
 ## 1. Introduction
 
@@ -733,9 +729,7 @@ We obtained strong evidence that the people belonging to different races are not
 Conclusion
 ----------
 
-In this project, I utilized the General Social Survey Coursera Extract dataset to pose several research questions. Using statistical tests learnt in the Inferential Statistics offered on Coursera by Duke University, I drew statistical inferences for each research question that can be generalized to the entire U.S. population.
-
-The code used in this article is available on [GitHub][github]. Thanks for reading!
+In this project, I utilized the General Social Survey Coursera Extract dataset to pose several research questions. Using statistical tests learnt in the Inferential Statistics offered on Coursera by Duke University, I drew statistical inferences for each research question that can be generalized to the entire U.S. population. Thanks for reading!
 
 References
 ----------
